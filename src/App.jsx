@@ -106,7 +106,7 @@ export default function App() {
               </svg>
             </div>
             <div>
-              <div className="logo-text">Outreach<span>OS</span></div>
+              <div className="logo-text">Regi<span>_DM</span></div>
               <div className="logo-sub">instagram.dm.automation</div>
             </div>
           </div>

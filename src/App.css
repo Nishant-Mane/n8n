@@ -894,3 +894,186 @@ body {
     opacity: 0.2
   }
 }
+
+/* ─── RESPONSIVE ──────────────────────────────────────────── */
+
+/* Tablet  ≤ 900px */
+@media (max-width: 900px) {
+  body {
+    overflow: auto;
+    font-size: 14px;
+  }
+
+  .app {
+    height: auto;
+    min-height: 100vh;
+  }
+
+  /* Header: hide verbose meta, tighten padding */
+  .header {
+    grid-template-columns: 1fr auto;
+    padding: 0 16px;
+    height: 52px;
+  }
+
+  .header-right {
+    display: none;
+  }
+
+  /* Metrics bar: allow wrapping */
+  .metrics-bar {
+    flex-wrap: wrap;
+    height: auto;
+  }
+
+  .metric-card {
+    flex: 1 1 calc(50% - 1px);
+    min-width: 120px;
+    padding: 11px 16px;
+  }
+
+  .trigger-btn {
+    flex: 1 1 100%;
+    margin: 8px 12px;
+    min-width: unset;
+    padding: 12px 24px;
+  }
+
+  /* Main: stack sidebar above log */
+  .main {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+    overflow: visible;
+  }
+
+  .sidebar {
+    border-right: none;
+    border-bottom: 1px solid var(--border2);
+    overflow-y: visible;
+    max-height: none;
+  }
+
+  .log-panel {
+    min-height: 340px;
+  }
+
+  /* Log row: tighten columns */
+  .log-row {
+    grid-template-columns: 36px 70px 40px 1fr;
+    padding: 5px 16px;
+    font-size: 10.5px;
+  }
+}
+
+/* Phone  ≤ 600px */
+@media (max-width: 600px) {
+  body {
+    font-size: 13px;
+  }
+
+  /* Header: compact */
+  .header {
+    grid-template-columns: 1fr auto;
+    padding: 0 14px;
+    height: 50px;
+  }
+
+  .logo-sub {
+    display: none;
+  }
+
+  .logo-text {
+    font-size: 14px;
+  }
+
+  .status-pill {
+    font-size: 11px;
+    padding: 5px 12px;
+  }
+
+  /* Metrics: each card full-row pair, 2-col grid */
+  .metrics-bar {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+  }
+
+  .metric-card {
+    border-right: 1px solid rgba(255,255,255,0.15);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+
+  .metric-card:nth-child(2),
+  .metric-card:nth-child(4) {
+    border-right: none;
+  }
+
+  .metric-value {
+    font-size: 22px;
+  }
+
+  .trigger-btn {
+    grid-column: span 2;
+    margin: 8px;
+    padding: 13px 20px;
+    font-size: 13px;
+  }
+
+  /* Sidebar blocks: tighten */
+  .sidebar-block {
+    padding: 14px;
+  }
+
+  .pipe-item {
+    padding: 7px 8px;
+  }
+
+  .current-card {
+    margin: 10px 14px;
+    padding: 12px 14px;
+  }
+
+  /* Log toolbar */
+  .log-toolbar {
+    padding: 11px 14px;
+  }
+
+  /* Log rows: collapse index column on very small screens */
+  .log-row {
+    grid-template-columns: 0 64px 38px 1fr;
+    padding: 5px 14px;
+    font-size: 10px;
+  }
+
+  .log-idx {
+    display: none;
+  }
+
+  .log-panel {
+    min-height: 280px;
+  }
+}
+
+/* Extra-small phones ≤ 380px */
+@media (max-width: 380px) {
+  .header-center {
+    display: none;
+  }
+
+  .header {
+    grid-template-columns: 1fr;
+  }
+
+  .metric-value {
+    font-size: 20px;
+  }
+
+  .log-row {
+    grid-template-columns: 60px 36px 1fr;
+    font-size: 9.5px;
+  }
+
+  .log-ts {
+    display: none;
+  }
+}
